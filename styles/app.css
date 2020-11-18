@@ -1,1 +1,9 @@
-
+#containerProfile {
+    display:flex;
+    justify-content: center;
+    transform: translateY(100px);
+}
+.userInfo {
+    margin: 6px;
+    margin-right: 40px;
+}
