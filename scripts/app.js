@@ -17,30 +17,36 @@ function addListener() {
 
         // grab what user typed
         var name = document.getElementById("name").value;
-        var neighbourhood = document.getElementById("hood").value;
-        var reason = document.getElementById("reason").value;
+        var lastname = document.getElementById("lastname").value;
+        var address = document.getElementById("address").value;
+        var phonenumber = document.getElementById("phonenumber").value;
+        var driverlicense = document.getElementById("driverlicense").value;
 
         // get pointers to the checkboxes
-        var check1 = document.getElementById("check1");
-        var check2 = document.getElementById("check2");
+        var check1 = document.getElementById("comprehensive");
+        var check2 = document.getElementById("collision");
+        var check2 = document.getElementById("thirdparty");
 
-        //console.log(name);
-        //console.log(neighbourhood);
-        //console.log(check1.checked);
-        //console.log(check2.checked);
+        console.log(name);
+        console.log(lastname);
+        console.log(check1.checked);
+        console.log(check2.checked);
 
         // write the values into new database document
-        db.collection("shops")
+        db.collection("Renewals")
             .add({ //using the add() function, auto-generated doc ID
                 "name": name,
-                "hood": neighbourhood,
-                "reason": reason,
-                "open-window": check1.checked, //boolean value
-                "patio-seating": check2.checked //true if checked
+                "lastname": lastname,
+                "address": address,
+                "phonenumber": phonenumber,
+                "driverlicense": driverlicense,
+                "comprehensive": check1.checked, //boolean value
+                "collision": check2.checked, //true if checked
+                "thirdparty": check2.checked //true if checked
             })
     })
 }
-//addListener();
+addListener();
 
 //--------------------------------------------------------
 // This function reads the "shops" collection from database
@@ -306,4 +312,4 @@ function getLocationAndSave() {
         })
     })
 }
-getLocationAndSave();
+//getLocationAndSave();
