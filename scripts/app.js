@@ -48,6 +48,7 @@ function addListener() {
 }
 addListener();
 
+
 //--------------------------------------------------------
 // This function reads the "shops" collection from database
 // Then cycles thru the collection to
