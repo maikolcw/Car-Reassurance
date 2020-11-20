@@ -157,7 +157,7 @@ getUser();
 function disableLoginLink() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            //console.log("change it to logout");
+            console.log("change it to logout");
             document.getElementById("loginlink").href = "index.html";
             document.getElementById("loginlink").innerHTML = "Logout";
         }
@@ -272,3 +272,38 @@ function getUserProfile() {
     })
 }
 //getUserProfile();
+
+//-----------------------------------------------------------------------
+// Assume the HTML has a text input for user to enter location,
+// and a "add" button
+// This function will listen to the "add" button, then grab the location
+// from the text input (id = "location")
+// and save it to the database for the authenticated user.
+//----------------------------------------------------------------------
+function getLocationAndSave() {
+    document.getElemenyById("addButton").addEventListener('click', function () {
+        var name = document.getElementById("name").value;
+        var lastname = document.getElementById("lastname").value;
+        var address = document.getElementById("address").value;
+        var phonenumber = document.getElementById("phonenumber").value;
+        var driverlicense = document.getElementById("driverlicense").value;
+        console.log(name);
+        console.log(lastname);
+        console.log(address);
+        console.log(phonenumber);
+        console.log(driverlicense);
+
+        // if the current user is signed in, then save it to their document
+        firebase.auth().onAuthStateChanged(function (user) {
+            db.collection("users").doc(user.uid)
+                .update({
+                    "name": name,
+                    "lastname": lastname,
+                    "address": address,
+                    "phonenumber": phonenumber,
+                    "driverlicense": driverlicense
+                })
+        })
+    })
+}
+getLocationAndSave();
