@@ -21,11 +21,22 @@ function addListener() {
         var address = document.getElementById("address").value;
         var phonenumber = document.getElementById("phonenumber").value;
         var driverlicense = document.getElementById("driverlicense").value;
+        var carmake = document.getElementById("carmake").value;
+        var carmodel = document.getElementById("carmodel").value;
+        var caryear = document.getElementById("caryear").value;
 
         // get pointers to the checkboxes
         var check1 = document.getElementById("comprehensive");
         var check2 = document.getElementById("collision");
-        var check2 = document.getElementById("thirdparty");
+        var check3 = document.getElementById("ethirdparty");
+        var check4 = document.getElementById("eunderinsuredmotor");
+        var check5 = document.getElementById("lossofuse");
+        var check6 = document.getElementById("luxury");
+        var check7 = document.getElementById("specifiedperils");
+        var check8 = document.getElementById("rentalvehicle");
+        var check9 = document.getElementById("newvehicleprotection");
+        var check10 = document.getElementById("optionalinsurance");
+        var check11 = document.getElementById("specializedcoverage");
 
         console.log(name);
         console.log(lastname);
@@ -40,9 +51,20 @@ function addListener() {
                 "address": address,
                 "phonenumber": phonenumber,
                 "driverlicense": driverlicense,
+                "carmake": carmake,
+                "carmodel": carmodel,
+                "caryear": caryear,
                 "comprehensive": check1.checked, //boolean value
                 "collision": check2.checked, //true if checked
-                "thirdparty": check2.checked //true if checked
+                "ethirdparty": check3.checked, //true if checked
+                "eunderinsuredmotor": check4.checked, //true if checked
+                "lossofuse": check5.checked, //true if checked
+                "luxury": check6.checked, //true if checked
+                "specifiedperils": check7.checked, //true if checked
+                "rentalvehicle": check8.checked, //true if checked
+                "newvehicleprotection": check9.checked, //true if checked
+                "optionalinsurance": check10.checked, //true if checked
+                "specializedcoverage": check11.checked//true if checked
             })
     })
 }

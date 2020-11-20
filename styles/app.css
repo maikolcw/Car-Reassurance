@@ -7,3 +7,22 @@
     margin: 6px;
     margin-right: 40px;
 }
+
+.navbar-brand{
+    font-size: 2em;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+}
+
+.btn-primary {
+    color: rgb(226, 21, 21);
+    background-color: #B66189;
+    border-color: #17cc3e;
+  }
+
+  .navbar-light .navbar-brand {
+    color: rgba(255, 112, 112, 0.9);
+  }
+
+  .bg-dark {
+    background-color: #B66189 !important;
+  }
