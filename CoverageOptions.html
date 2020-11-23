@@ -25,7 +25,6 @@
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">myApp - Hi, <span id="username">friend</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,21 +56,23 @@
         </div>
     </nav>
 
+    <div class="navbar-brand" id="colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
+
     <div>
-        <h1>Coverage Options</h1>
+        <h1 class="colorcoverage">Coverage Options</h1>
     </div>
     <div>
         <br><br>
-        <h2>Basic Coverage (mandatory coverage) </h2>
-        <ul>
+        <h2 class="colorcoverage">Basic Coverage (mandatory coverage) </h2>
+        <ul class="colorcoverage">
             <li>Medical cost and wage loss for you, your passengers, and members of your household </li>
             <li>Third party liability coverage</li>
             <li>Underinsured Motorist Protection </li>
             <li>Hit-and-run damage and injuries </li>
             <li>Inverse liability protection </li>
         </ul>
-        <h2>Optional Coverage</h2>
-        <ul>
+        <h2 class="colorcoverage">Optional Coverage</h2>
+        <ul class="colorcoverage">
             <li>Collision</li>
             <ul>
                 <li>Cover repair and replacement costs, even if you’re at fault.</li>
@@ -117,6 +118,11 @@
 
     <!-- Your own JavaScript functions included here    -->
     <script src="scripts/app.js"> </script>
+
+    <script>
+        getUser();
+        disableLoginLink();
+    </script>
 
 
 

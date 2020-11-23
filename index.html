@@ -25,8 +25,7 @@
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">myApp - Hi, <span id="username">friend</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -57,8 +56,9 @@
         </div>
     </nav>
 
+    <div class="navbar-brand">Welcome to Car Reassurance, <span id="username">friend</span></div>
+
     <div>
-        <h1>Welcome to Car Reassurance</h1>
         <p>At Car Reassurance, we understand times are tough. We want auto insurance to be the last thing you’re
             thinking about. Our team will connect you with a broker who can process your renewal within days, all from
             the comfort of your own home. We’re here to meet the needs of individuals, businesses, and non-profit
@@ -92,7 +92,9 @@
     <script src="scripts/app.js"> </script>
 
     <script>
-        logout();
+        logout()
+        getUser();
+        disableLoginLink();
     </script>
 
 </body>

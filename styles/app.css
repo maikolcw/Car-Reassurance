@@ -1,28 +1,52 @@
 #containerProfile {
-    display:flex;
-    justify-content: center;
-    transform: translateY(100px);
-}
-.userInfo {
-    margin: 6px;
-    margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  transform: translateY(100px);
 }
 
-.navbar-brand{
-    font-size: 2em;
-    font-family: 'Big Shoulders Stencil Display', cursive;
+.userInfo {
+  margin: 6px;
+  margin-right: 40px;
+}
+
+.navbar-brand {
+  font-size: 2em;
+  font-family: 'Big Shoulders Stencil Display', cursive;
 }
 
 .btn-primary {
-    color: rgb(226, 21, 21);
-    background-color: #B66189;
-    border-color: #17cc3e;
-  }
+  color: rgb(226, 21, 21);
+  background-color: #B66189;
+  border-color: #17cc3e;
+}
 
-  .navbar-light .navbar-brand {
-    color: rgba(255, 112, 112, 0.9);
-  }
+.navbar-light .navbar-brand {
+  color: rgba(255, 112, 112, 0.9);
+}
 
-  .bg-dark {
-    background-color: #B66189 !important;
-  }
+.bg-dark {
+  background-color: #000000!important;
+}
+
+body {
+  background-color:#FFFFFF;
+}
+
+.container {
+  background-color: #B6B6B6;
+}
+
+#colorwelcome {
+  display: block;
+  width: 100vw;
+  background-color:#787671;
+}
+
+.colorcoverage {
+  color: #111C26;
+}
+
+.jumbotron {
+  background-color: white;
+}
+

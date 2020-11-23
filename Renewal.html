@@ -25,7 +25,6 @@
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">myApp - Hi, <span id="username">friend</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,8 +56,10 @@
         </div>
     </nav>
 
+    <div class="navbar-brand" id="colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
+
     <div class="jumbotron">
-        <h1 class="display-4">Account Information</h1>
+        <h1 class="display-4" id="coloraccount">Account Information</h1>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -185,6 +186,10 @@
     <!-- Your own JavaScript functions included here    -->
     <script src="scripts/app.js"> </script>
 
+    <script>
+        getUser();
+        disableLoginLink();
+    </script>
 </body>
 
 </html>
