@@ -1463,6 +1463,7 @@
     .offset-lg-11 {
       margin-left: 91.666667%;
     }
+
   }
   
   @media (min-width: 1200px) {
@@ -6145,7 +6146,7 @@
   }
   
   .bg-dark {
-    background-color: #343a40 !important;
+    background-color: #7b828a !important;
   }
   
   a.bg-dark:hover, a.bg-dark:focus,

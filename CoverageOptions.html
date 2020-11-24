@@ -19,7 +19,9 @@
 </head>
 
 <body>
-
+    <div class="background">
+        <!-- <div class="blur"></div> -->
+    </div>
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
@@ -56,41 +58,52 @@
         </div>
     </nav>
 
-    <div class="navbar-brand" id="colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
+    <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
 
-    <div>
-        <h1 class="colorcoverage">Coverage Options</h1>
-    </div>
-    <div>
-        <br><br>
-        <h2 class="colorcoverage">Basic Coverage (mandatory coverage) </h2>
-        <ul class="colorcoverage">
-            <li>Medical cost and wage loss for you, your passengers, and members of your household </li>
-            <li>Third party liability coverage</li>
-            <li>Underinsured Motorist Protection </li>
-            <li>Hit-and-run damage and injuries </li>
-            <li>Inverse liability protection </li>
-        </ul>
-        <h2 class="colorcoverage">Optional Coverage</h2>
-        <ul class="colorcoverage">
-            <li>Collision</li>
-            <ul>
-                <li>Cover repair and replacement costs, even if you’re at fault.</li>
-                <li>Even the best drivers can make mistakes and fixing your vehicle can be expensive. Collision coverage
-                    helps pay for your vehicle repairs, towing, storage and more, even if the crash was your fault.
-                </li>
-            </ul>
-            <li>Comprehensive</li>
-            <li>Extended Third-Party Liability</li>
-            <li>Extended Underinsured Motorist Protection </li>
-            <li>Loss of Use </li>
-            <li>Luxury vehicles</li>
-            <li>Specified Perils </li>
-            <li>Rental Vehicle Coverage </li>
-            <li>New Vehicle Protection </li>
-            <li>Optional insurance packages </li>
-            <li>Specialized coverage </li>
-        </ul>
+    <div id="contentContainer">
+        <div>
+            <h1 class="colorcoverage2 textShadow">Coverage Options</h1>
+        </div>
+        <div>
+            <br><br>
+            <div class="optionContainer">
+                <h2 class="colorcoverage2">Basic Coverage</h2>
+                <h2 class="colorcoverage2">(mandatory coverage)</h2>
+                <div class="listContainer">
+                    <ul class="colorcoverage">
+                        <li>Medical cost and wage loss for you, your passengers, and members of your household </li>
+                        <li>Third party liability coverage</li>
+                        <li>Underinsured Motorist Protection </li>
+                        <li>Hit-and-run damage and injuries </li>
+                        <li>Inverse liability protection </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="optionalCoverageContainer" class="optionContainer">
+                <h2 class="colorcoverage2">Optional Coverage</h2>
+                <div class="listContainer">
+                    <ul class="colorcoverage">
+                        <li>Collision</li>
+                        <ul>
+                            <li>Cover repair and replacement costs, even if you’re at fault.</li>
+                            <li>Even the best drivers can make mistakes and fixing your vehicle can be expensive. Collision coverage
+                                helps pay for your vehicle repairs, towing, storage and more, even if the crash was your fault.
+                            </li>
+                        </ul>
+                        <li>Comprehensive</li>
+                        <li>Extended Third-Party Liability</li>
+                        <li>Extended Underinsured Motorist Protection </li>
+                        <li>Loss of Use </li>
+                        <li>Luxury vehicles</li>
+                        <li>Specified Perils </li>
+                        <li>Rental Vehicle Coverage </li>
+                        <li>New Vehicle Protection </li>
+                        <li>Optional insurance packages </li>
+                        <li>Specialized coverage </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-------------------------------------------->

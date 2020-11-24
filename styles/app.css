@@ -4,6 +4,20 @@
   transform: translateY(100px);
 }
 
+.navbar {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(1.8px);
+}
+
+/* .blur {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  height: 100vh;
+} */
+
 .userInfo {
   margin: 6px;
   margin-right: 40px;
@@ -12,6 +26,11 @@
 .navbar-brand {
   font-size: 2em;
   font-family: 'Big Shoulders Stencil Display', cursive;
+  color: white;
+}
+
+#welcome {
+  margin-top: 55px;
 }
 
 .btn-primary {
@@ -25,28 +44,98 @@
 }
 
 .bg-dark {
-  background-color: #000000!important;
+  background-color: #026febe7 !important;
 }
 
 body {
-  background-color:#FFFFFF;
+  margin: 0;
 }
+
+.background {
+  background-image: url("../images/wallpaper.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  filter: blur(4px);
+  bottom: 0;
+  position: fixed
+}
+
+
 
 .container {
   background-color: #B6B6B6;
 }
 
-#colorwelcome {
+.colorwelcome {
   display: block;
   width: 100vw;
-  background-color:#787671;
+  background-color:#201e80;
 }
 
 .colorcoverage {
   color: #111C26;
+  margin-right: 15px;
+  margin-left: 15px;
+  justify-content: center;
+}
+
+.colorcoverage2 {
+  color: #111C26;
+  margin-right: 15px;
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .jumbotron {
   background-color: white;
 }
 
+#contentContainer {
+margin: 10%;
+margin-top: 40px;
+display: flex;
+flex-direction: column;
+}
+
+.textShadow {
+  text-shadow: -4px 5.4px 3px rgba(41, 44, 88, 0.6);
+}
+
+.optionContainer {
+  background-color:#026febcb;
+  border-radius: 30px;
+  padding-top: 15px;
+  border-style: solid;
+  border-color: rgba(66, 0, 66, 0.986);
+  box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.6);
+}
+
+.listContainer {
+  /* background-color: #ffffff8a; */
+  background-color: #ffffff;
+
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 40px;
+}
+
+#optionalCoverageContainer {
+  margin-top: 50px;
+}
+
+@media (min-width: 992px) {
+  #welcome {
+    margin-top: 132px;
+  }
+}
