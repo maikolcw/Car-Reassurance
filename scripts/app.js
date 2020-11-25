@@ -88,9 +88,6 @@ function addListener2() {
         var bcity = document.getElementById("bcity").value;
         var bprovince = document.getElementById("bprovince").value;
 
-        
-
-
         // write the values into new database document
         db.collection("Brokers")
             .add({ //using the add() function, auto-generated doc ID

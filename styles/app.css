@@ -134,6 +134,24 @@ flex-direction: column;
   margin-top: 50px;
 }
 
+/*--------------------------------------*/
+/* Customizing some font awesome icons  */
+/*--------------------------------------*/
+
+.fa-shopping-cart {
+  font-size: 30px;
+  color:rgb(238, 131, 131);
+}
+
+#myfooter.fa-home{
+  font-size: 2em;
+  color:brown;
+}
+
+.fa-anchor {
+  color: red;
+}
+
 @media (min-width: 992px) {
   #welcome {
     margin-top: 132px;
