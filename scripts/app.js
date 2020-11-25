@@ -64,11 +64,47 @@ function addListener() {
                 "rentalvehicle": check8.checked, //true if checked
                 "newvehicleprotection": check9.checked, //true if checked
                 "optionalinsurance": check10.checked, //true if checked
-                "specializedcoverage": check11.checked//true if checked
+                "specializedcoverage": check11.checked //true if checked
             })
     })
 }
 addListener();
+
+//-----------------------------------------------------
+// This function adds a listener to the form
+// When form is submitted, the values are extracted
+// and written into the database
+//------------------------------------------------------
+function addListener2() {
+    document.getElementById("brokerform").addEventListener("submit", function (e) {
+        // disable default form handling
+        e.preventDefault();
+
+        // grab what user typed
+        var bname = document.getElementById("bname").value;
+        var blastname = document.getElementById("blastname").value;
+        var brokerlicense = document.getElementById("brokerlicense").value;
+        var company = document.getElementById("company").value;
+        var bcity = document.getElementById("bcity").value;
+        var bprovince = document.getElementById("bprovince").value;
+
+        console.log(name);
+        console.log(lastname);
+
+
+        // write the values into new database document
+        db.collection("Brokers")
+            .add({ //using the add() function, auto-generated doc ID
+                "Broker Name": bname,
+                "Broker Last Name": blastname,
+                "Broker License": brokerlicense,
+                "Company": company,
+                "Broker City": bcity,
+                "Broker Province": bprovince
+            })
+    })
+}
+addListener2();
 
 
 //--------------------------------------------------------

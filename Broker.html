@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>My BCIT Project</title>
-    <meta name="1800 project" content="Car Insurance Renewal">
-    <meta name="author" content="Maikol, Anton, Misam">
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#navbarTogglerDemo02">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -58,18 +58,35 @@
 
     <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
 
-    <div>
-        <p>At Car Reassurance, we understand times are tough. We want auto insurance to be the last thing you’re
-            thinking about. Our team will connect you with a broker who can process your renewal within days, all from
-            the comfort of your own home. We’re here to meet the needs of individuals, businesses, and non-profit
-            organizations. </p>
+    <div class="jumbotron">
+        <h1 class="display-4">Broker Information</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <!-- Basic Form -->
+                    <form id="brokerform">
+                        <br>
+                        <label>First Name:</label><br>
+                        <input type="text" id="bname" value="John"><br><br>
+                        <label>Last Name:</label><br>
+                        <input type="text" id="blastname" value="Doe"><br><br>
+                        <label>Broker License:</label><br>
+                        <input type="text" id="brokerlicense" value="7777777"><br><br>
+                        <label>Company:</label><br>
+                        <input type="text" id="company" value="ICBC"><br><br>
+                        <label>City:</label><br>
+                        <input type="text" id="bcity" value="Vancouver"><br><br>
+                        <label>Province:</label><br>
+                        <input type="text" id="bprovince" value="British Columbia"><br><br>
+
+                        <!-- submit button of the form -->
+                        <br><br><input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div>
-        <a href="Renewal.html">User Renewals</a>
-        <br>
-        <a href="Broker.html">Broker form</a>
-    </div>
 
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
@@ -98,11 +115,10 @@
     <script src="scripts/app.js"> </script>
 
     <script>
-        logout()
         getUser();
         disableLoginLink();
+        addListener2();
     </script>
-
 </body>
 
 </html>
