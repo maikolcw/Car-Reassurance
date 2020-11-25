@@ -88,8 +88,7 @@ function addListener2() {
         var bcity = document.getElementById("bcity").value;
         var bprovince = document.getElementById("bprovince").value;
 
-        console.log(name);
-        console.log(lastname);
+        
 
 
         // write the values into new database document
