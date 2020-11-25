@@ -130,6 +130,58 @@ flex-direction: column;
   line-height: 40px;
 }
 
+#homeText {
+  background-color: white;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 15px;
+  text-align: justify;
+  line-height: 30px;
+  border-style: solid;
+  font-size: 20px;
+  padding-bottom: 20px;
+  box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.6);
+}
+
+#FAQ {
+  background: white;
+  height: 200px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 60px;
+  border-top-left-radius: 60px;
+  box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.6);
+  border-style: solid;
+  border-bottom: 0px;
+}
+
+#toInfo {
+  background: white;
+  height: 200px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 60px;
+  text-align: center;
+  border-bottom-right-radius: 60px;
+  box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.6);
+  border-style: solid;
+  border-top: 0px;
+}
+
+#Section {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+
 #optionalCoverageContainer {
   margin-top: 50px;
 }
