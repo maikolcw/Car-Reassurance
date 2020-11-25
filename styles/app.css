@@ -8,8 +8,12 @@
   z-index: 2;
   position: fixed;
   width: 100%;
-  top: 0;
+  /* top: 0; */
   backdrop-filter: blur(3.8px);
+}
+
+.topNav {
+top: 0;
 }
 
 /* .blur {
