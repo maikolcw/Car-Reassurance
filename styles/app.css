@@ -9,7 +9,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  backdrop-filter: blur(1.8px);
+  backdrop-filter: blur(3.8px);
 }
 
 /* .blur {
@@ -30,7 +30,7 @@
 }
 
 #welcome {
-  margin-top: 55px;
+  margin-top: 56px;
 }
 
 .btn-primary {
@@ -44,7 +44,7 @@
 }
 
 .bg-dark {
-  background-color: #026febe7 !important;
+  background-color: #026feb8c !important;
 }
 
 body {
