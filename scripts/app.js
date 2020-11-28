@@ -15,6 +15,8 @@ function addListener() {
         // disable default form handling
         e.preventDefault();
 
+        // console.log("Gello");
+
         // grab what user typed
         var name = document.getElementById("name").value;
         var lastname = document.getElementById("lastname").value;
@@ -70,6 +72,8 @@ function addListener() {
 }
 addListener();
 
+
+
 //-----------------------------------------------------
 // This function adds a listener to the form
 // When form is submitted, the values are extracted
@@ -79,6 +83,7 @@ function addListener2() {
     document.getElementById("brokerform").addEventListener("submit", function (e) {
         // disable default form handling
         e.preventDefault();
+
 
         // grab what user typed
         var bname = document.getElementById("bname").value;
@@ -197,9 +202,17 @@ function getUser() {
                 .doc(user.uid)
                 .get()
                 .then(function (doc) {
-                    var n = doc.data().name;
-                    console.log(n);
-                    $("#username").text(n);
+                    const dataFN = doc.data().name;
+                    const dataLN = doc.data()["last name"];
+                    const dataA = doc.data().address;
+                    const dataPN = doc.data()["phone number"];
+                    const dataDL = doc.data()["driver's license"];
+                    // console.log(n);
+                    $("#username").text(dataFN);
+                    $("#name").val(dataFN);
+                    $("#address").val(dataA);
+                    $("#phonenumber").val(dataPN);
+                    $("#driverlicense").val(dataDL);
                 })
         } else {
             console.log("no user is signed in");
