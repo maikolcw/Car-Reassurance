@@ -194,18 +194,34 @@ flex-direction: column;
 /* Customizing some font awesome icons  */
 /*--------------------------------------*/
 
+#myfooter{
+  height: 70px;
+
+}
+
 .fa-shopping-cart {
   font-size: 30px;
   color:rgb(238, 131, 131);
 }
 
-#myfooter.fa-home{
-  font-size: 2em;
-  color:brown;
+.fa-home{
+  font-size: 2.5em;
+  color:white;
 }
 
-.fa-anchor {
-  color: red;
+.fa-car-side {
+  font-size: 2.5em;
+  color:white;
+}
+
+.fa-question-circle{
+  font-size: 2.5em;
+  color:white;
+}
+
+.fa-user{
+  font-size: 2.5em;
+  color:white;
 }
 
 @media (min-width: 992px) {
