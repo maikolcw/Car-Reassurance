@@ -80,7 +80,7 @@ addListener();
 
 
 //-----------------------------------------------------
-// This function adds a listener to the form
+// This function adds a listener to the brokers form
 // When form is submitted, the values are extracted
 // and written into the database
 //------------------------------------------------------
