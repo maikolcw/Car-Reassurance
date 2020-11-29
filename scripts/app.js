@@ -218,6 +218,7 @@ function getUser() {
                     // console.log(n);
                     $("#username").text(dataFN);
                     $("#name").val(dataFN);
+                    $("#lastname").val(dataLN);
                     $("#address").val(dataA);
                     $("#phonenumber").val(dataPN);
                     $("#driverlicense").val(dataDL);
