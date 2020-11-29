@@ -26,6 +26,7 @@ function addListener() {
         var carmake = document.getElementById("carmake").value;
         var carmodel = document.getElementById("carmodel").value;
         var caryear = document.getElementById("caryear").value;
+        var datesub = document.getElementById("datesub").value;
 
         // get pointers to the checkboxes
         var check1 = document.getElementById("comprehensive");
@@ -56,6 +57,7 @@ function addListener() {
                 "carmake": carmake,
                 "carmodel": carmodel,
                 "caryear": caryear,
+                "datesubmitted": datesub,
                 "comprehensive": check1.checked, //boolean value
                 "collision": check2.checked, //true if checked
                 "ethirdparty": check3.checked, //true if checked
