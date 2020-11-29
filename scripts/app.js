@@ -68,6 +68,9 @@ function addListener() {
                 "optionalinsurance": check10.checked, //true if checked
                 "specializedcoverage": check11.checked //true if checked
             })
+            .then(function() {
+                window.location.href="SuccessPage.html";
+            }) 
     })
 }
 addListener();
@@ -103,6 +106,9 @@ function addListener2() {
                 "Broker City": bcity,
                 "Broker Province": bprovince
             })
+            .then(function() {
+                window.location.href="SuccessPage.html";
+            })      
     })
 }
 addListener2();
