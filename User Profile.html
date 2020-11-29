@@ -16,6 +16,7 @@
 
     <!-- Optional CSS of your own               -->
     <link type="text/css" rel="stylesheet" href="styles/app.css" />
+
 </head>
 
 <body>
@@ -24,7 +25,7 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar topNav navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,16 +35,20 @@
                     <a class="nav-link" href="./index.html"><img id="home_css" src="./images/Homeicon.png"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./CoverageOptions.html"><img id="information_css" src="./images/Coverageicon.png"></a>
+                    <a class="nav-link" href="./CoverageOptions.html"><img id="information_css"
+                            src="./images/Coverageicon.png"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Information.html"><img id="coverage_css" src="./images/informationicon.png"></a>
+                    <a class="nav-link" href="./Information.html"><img id="coverage_css"
+                            src="./images/informationicon.png"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Settings.html"><img id="settings_css" src="./images/Settingsicon.png"></a>
+                    <a class="nav-link" href="./Settings.html"><img id="settings_css"
+                            src="./images/Settingsicon.png"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./User Profile.html"><img id="profile_css" src="./images/Profileicon.png"></a>
+                    <a class="nav-link" href="./User Profile.html"><img id="profile_css"
+                            src="./images/Profileicon.png"></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html" id="loginlink">login/signup</a>
@@ -52,11 +57,11 @@
         </div>
     </nav>
 
-    <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
-    
+    <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span>
+    </div>
+
     <div id="containerProfile">
         <div>
-            <div class="userInfo">User ID:</div>
             <div class="userInfo">First Name: </div>
             <div class="userInfo">Last Name: </div>
             <div class="userInfo">Address: </div>
@@ -65,21 +70,25 @@
             <div class="userInfo">Driver's License: </div>
         </div>
         <div>
-            <input placeholder="ID">
-        </br>
-            <input placeholder="First Name">
-        </br>
-            <input placeholder="Last Name">
-        </br>
-            <input placeholder="Address">
-        </br>
-            <input placeholder="Email">
-        </br>
-            <input placeholder="Phone Number">
-        </br>
-            <input placeholder="Driver's License">
+            <input id="profileFName" placeholder="First Name">
+            </br>
+            <input id="profileLName" placeholder="Last Name">
+            </br>
+            <input id="profileAddress" placeholder="Address">
+            </br>
+            <input id="profileEmail" placeholder="Email">
+            </br>
+            <input id="profilePN" placeholder="Phone Number">
+            </br>
+            <input id="profileDL" placeholder="Driver's License">
         </div>
+        <form id="submitC">
+            <input type="submit" value="Submit">
+        </form>
     </div>
+
+
+
 
 
     <!-------------------------------------------->
@@ -88,20 +97,21 @@
     <!-- Bootstrap libraries from CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Firebase libraries from CDN -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
-    
+
     <!-- Your own Firebase API key information -->
     <script src="scripts/firebase_api_car.js"> </script>
 
@@ -111,8 +121,108 @@
     <script>
         getUser();
         disableLoginLink();
+
+        var database = firebase.database();
+
+
+        var user = firebase.auth().currentUser;
+
+        if (user != null) {
+            user.providerData.forEach(function (profile) {
+                // console.log("Sign-in provider: " + profile.providerId);
+                // console.log("  Provider-specific UID: " + profile.uid);
+                // console.log("  Name: " + profile.displayName);
+                // console.log("  Email: " + profile.email);
+                // console.log("  Photo URL: " + profile.photoURL);
+            });
+        }
+        console.log("Current user is ", firebase.auth.currentUser);
+
+        function submitProfile() {
+            document.getElementById("submitC").addEventListener("submit", function (e) {
+                // disable default form handling
+                e.preventDefault();
+
+                console.log("Gello");
+
+                // grab what user typed
+                var profN = document.getElementById("profileFName").value;
+                var profLN = document.getElementById("profileLName").value;
+                var profA = document.getElementById("profileAddress").value;
+                var profE = document.getElementById("profileEmail").value;
+                var profPN = document.getElementById("profilePN").value;
+                var profDL = document.getElementById("profileDL").value;
+
+
+                function updateUserProfileFirestore() {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        console.log("user is signed in: " + user.uid);
+                        db.collection("users").doc(user.uid)
+                            .update({
+                                "name": profN,
+                                "last name": profLN,
+                                "email": profE,
+                                "address": profDL,
+                                "phone number": profPN,
+                                "driver's license": profDL
+                            }).then(function () {
+                                console.log("updated users database");
+                            }).catch(function (error) {
+                                console.log("cannot update users database");
+                            })
+                    })
+                }
+                updateUserProfileFirestore();
+
+            })
+        }
+        submitProfile();
+        
+        function getUserData() {
+            return firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    console.log("user is signed in");
+                    db.collection("users")
+                        .doc(user.uid)
+                        .get()
+                        .then(function (doc) {
+                            const dataFN = doc.data().name;
+                            const dataLN = doc.data()["last name"];
+                            const dataA = doc.data().address;
+                            const dataE = doc.data().email;
+                            const dataPN = doc.data()["phone number"];
+                            const dataDL = doc.data()["driver's license"];
+                            console.log(doc.data());
+
+                            $("#profileFName").val(dataFN);
+                            $("#profileLName").val(dataLN);
+                            $("#profileAddress").val(dataA);
+                            $("#profileEmail").val(dataE);
+                            $("#profilePN").val(dataPN);
+                            $("#profileDL").val(dataDL);
+
+                        })
+                } else {
+                    console.log("no user is signed in");
+                }
+            })
+
+        }
+
+        let userData = getUserData();
+        console.log("User data is: ", userData);
+
+
+
+        getUserData();
+
+        
+
+
+
+
     </script>
- 
+
 
 </body>
 
