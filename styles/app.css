@@ -1,7 +1,33 @@
 #containerProfile {
   display: flex;
   justify-content: center;
+  /* transform: translateY(100px); */
+  background-color: rgb(228, 228, 240);
+  padding: 30px;
+  padding-bottom: 110px;
+  line-height: 40px;
+  background-image: url(/images/receipt.jpg);
+  box-shadow: 0px 17px 5px 49px rgba(41, 44, 88, 0.6);
+
+}
+
+#border-receipt {
+  padding-left: 0;
+  padding-right: 0;
+  border-style: dashed;
+  border-left: 0px;
+  border-right: 0px;
+  border-color: rgb(0, 0, 0);
+  border-width: 7.2px;
   transform: translateY(100px);
+
+}
+
+#submitC {
+  display: flex;
+  justify-content: center;
+  transform: translateY(2px);
+  font-size: 50px;
 }
 
 .navbar {
@@ -14,7 +40,29 @@
 
 .topNav {
 top: 0;
+line-height: 40px;
 }
+
+.navItems {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 25px;
+}
+
+.fas {
+  margin-right: 12%;
+}
+
+.navText {
+  font-size: 6vw;
+  color: white;
+}
+
+.navText:hover {
+  color: rgba(255, 255, 255, 0.5)
+}
+
 
 /* .blur {
   background: rgba(255, 255, 255, 0.2);
@@ -35,6 +83,7 @@ top: 0;
 
 #welcome {
   margin-top: 56px;
+  font-size: 5vw;
 }
 
 .btn-primary {
@@ -138,13 +187,41 @@ flex-direction: column;
   background-color: white;
   margin: 50px;
   padding: 50px;
-  border-radius: 15px;
+  border-radius: 55px;
   text-align: justify;
   line-height: 30px;
   border-style: solid;
   font-size: 20px;
   padding-bottom: 20px;
   box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.6);
+}
+
+#successText {
+  background-color: white;
+  margin: 10%;
+  padding: 50px;
+  border-radius: 55px;
+  border-bottom-left-radius: 0;
+  text-align: center;
+  line-height: 30px;
+  border-style: solid;
+  font-size: 20px;
+  padding-bottom: 20px;
+  box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.295);
+}
+
+#bigS {
+  font-size: 13vw;
+  margin-bottom: 80px;
+  border-radius: 15px;
+  text-align: center;
+  border-style: solid;
+  box-shadow: -15px 20px 5px rgba(41, 44, 88, 0.6);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-color: black;
+  color: white;
+  background-color: rgb(0, 195, 255);
 }
 
 #FAQ {
@@ -190,6 +267,28 @@ flex-direction: column;
   margin-top: 50px;
 }
 
+#backHome {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  font-size: 6vw;
+  margin-right: 10%;
+  margin-left: 10%;
+  border-style: solid;
+  border-radius: 50px;
+  border-top-left-radius: 0px;
+  box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.295);
+}
+
+#backHome:hover {
+  background-color: rgba(0, 183, 255, 0.349);
+  box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.534);
+}
+
+#noLine {
+  text-decoration: none;
+}
+
 /*--------------------------------------*/
 /* Customizing some font awesome icons  */
 /*--------------------------------------*/
@@ -226,6 +325,10 @@ flex-direction: column;
 
 @media (min-width: 992px) {
   #welcome {
-    margin-top: 132px;
+    margin-top: 122px;
+  }
+
+  .navText {
+    display: none;
   }
 }

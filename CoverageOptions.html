@@ -36,16 +36,36 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./main.html" id="mainPage"><i class="fas fa-home"></i></a>
+                    <a class="nav-link" href="./main.html" id="mainPage">
+                        <div class="navItems">
+                            <i class="fas fa-home"></i>
+                            <div class="navText">Main Page</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./CoverageOptions.html" id="coveragePage"><i class="fas fa-car-side"></i></a>
+                    <a class="nav-link" href="./CoverageOptions.html" id="coveragePage">
+                        <div class="navItems">
+                            <i class="fas fa-car-side"></i>
+                            <div class="navText">Coverage Options</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./FAQ.html" id="faqPage"><i class="fas fa-question-circle"></i></a>
+                    <a class="nav-link" href="./FAQ.html" id="faqPage">
+                        <div class="navItems">
+                            <i class="fas fa-question-circle"></i>
+                            <div class="navText">Frequently Asked Questions</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./User Profile.html" id="profilePage"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="./User Profile.html" id="profilePage">
+                        <div class="navItems">
+                            <i class="fas fa-user"></i>
+                            <div class="navText">User Profile</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html" id="loginlink">login/signup</a>
@@ -54,7 +74,8 @@
         </div>
     </nav>
 
-    <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
+    <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span>
+    </div>
 
     <div id="contentContainer">
         <div>
@@ -82,13 +103,16 @@
                         <li>Collision</li>
                         <ul>
                             <li>Cover repair and replacement costs, even if you’re at fault.</li>
-                            <li>Even the best drivers can make mistakes and fixing your vehicle can be expensive. Collision coverage
-                                helps pay for your vehicle repairs, towing, storage and more, even if the crash was your fault.</li>
+                            <li>Even the best drivers can make mistakes and fixing your vehicle can be expensive.
+                                Collision coverage
+                                helps pay for your vehicle repairs, towing, storage and more, even if the crash was your
+                                fault.</li>
                         </ul>
 
                         <li>Comprehensive</li>
                         <ul>
-                            <li>Covers loss or damage to your vehicle from theft, vandalism, fire, earthquakes, explosions, 
+                            <li>Covers loss or damage to your vehicle from theft, vandalism, fire, earthquakes,
+                                explosions,
                                 flying or falling objects, hitting an animal, and weather-related damage.</li>
                         </ul>
 
@@ -104,7 +128,8 @@
 
                         <li>Loss of Use </li>
                         <ul>
-                            <li>Covers your expenses to rent a vehicle, use taxis and take public transit while your vehicle is being repaired.</li>
+                            <li>Covers your expenses to rent a vehicle, use taxis and take public transit while your
+                                vehicle is being repaired.</li>
                         </ul>
                     </ul>
                 </div>
@@ -112,12 +137,12 @@
         </div>
     </div>
 
-    <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
+    <!-- <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
         <a href="./main.html"><i class="fas fa-home"></i></a>
         <a href="./CoverageOptions.html"><i class="fas fa-car-side"></i></a>
         <a href="./FAQ.html"><i class="fas fa-question-circle"></i></a>
         <a href="./User Profile.html"><i class="fas fa-user"></i></a>
-    </footer>
+    </footer> -->
 
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
@@ -125,13 +150,13 @@
     <!-- Bootstrap libraries from CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Firebase libraries from CDN -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
