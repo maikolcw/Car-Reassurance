@@ -53,7 +53,30 @@
   border-color: rgb(0, 0, 0);
   border-width: 7.2px;
   transform: translateY(100px);
+}
 
+.border-receipt-right {
+  padding-left: 0;
+  padding-right: 0;
+  border-style: dashed;
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-color: rgb(245, 239, 239);
+  border-width: 7.2px;
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+.receipt {
+  background-color: rgb(228, 228, 240);
+  padding-left: 6vw;
+  padding-bottom: 10px;
+  padding-right: 4px;
+  margin-top: 30px;
+  padding-top: 20px;
+  background-image: url(/images/receipt.jpg);
+  box-shadow: -3px 17px 9px rgba(41, 44, 88, 0.6);
 }
 
 #submitC {
@@ -273,6 +296,11 @@ flex-direction: column;
   margin-top: 100px;
 }
 
+#faqContainer {
+  margin-right: 4vw;
+  margin-top: 50px;
+}
+
 #bigS {
   font-size: 13vw;
   margin-bottom: 80px;
@@ -288,35 +316,24 @@ flex-direction: column;
 }
 
 #FAQ {
-  background: white;
-  height: 200px;
-  width: 80%;
+  background-color:#008cff4f;
+  height: 100px;
+  width: 60vw;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   font-size: 60px;
-  border-top-left-radius: 60px;
+  border-radius: 55px;
   box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.6);
   border-style: solid;
-  border-bottom: 0px;
 }
 
-#toInfo {
-  background: white;
-  height: 200px;
-  width: 80%;
+#toMiddle {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  font-size: 60px;
-  text-align: center;
-  border-bottom-right-radius: 60px;
-  box-shadow: -14px 17px 5px rgba(41, 44, 88, 0.6);
-  border-style: solid;
-  border-top: 0px;
 }
+
 
 #Section {
   height: 80vh;

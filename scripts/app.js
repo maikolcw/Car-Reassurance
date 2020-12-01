@@ -246,6 +246,8 @@ function getUser() {
                     const dataA = doc.data().address;
                     const dataPN = doc.data()["phone number"];
                     const dataDL = doc.data()["driver's license"];
+                    console.log("Is Admin", doc.data().isAdmin);
+
                     // console.log(n);
                     $("#username").text(dataFN);
                     $("#name").val(dataFN);
