@@ -115,6 +115,37 @@ function addListener2() {
 }
 addListener2();
 
+function addListener3() {
+    document.getElementById("brokerformb").addEventListener("submit", function (e) {
+        // disable default form handling
+        e.preventDefault();
+
+
+        // grab what user typed
+        var bname = document.getElementById("bname").value;
+        var blastname = document.getElementById("blastname").value;
+        var brokerlicense = document.getElementById("brokerlicense").value;
+        var company = document.getElementById("company").value;
+        var bcity = document.getElementById("bcity").value;
+        var bprovince = document.getElementById("bprovince").value;
+
+        // write the values into new database document
+        db.collection("Brokers")
+            .add({ //using the add() function, auto-generated doc ID
+                "Broker Name": bname,
+                "Broker Last Name": blastname,
+                "Broker License": brokerlicense,
+                "Company": company,
+                "Broker City": bcity,
+                "Broker Province": bprovince
+            })
+            .then(function() {
+                window.location.href="SuccessPageBroker.html";
+            })      
+    })
+}
+addListener3();
+
 
 //--------------------------------------------------------
 // This function reads the "shops" collection from database
@@ -219,6 +250,8 @@ function getUser() {
                     $("#username").text(dataFN);
                     $("#name").val(dataFN);
                     $("#lastname").val(dataLN);
+                    $("#bname").val(dataFN);
+                    $("#blastname").val(dataLN);
                     $("#address").val(dataA);
                     $("#phonenumber").val(dataPN);
                     $("#driverlicense").val(dataDL);

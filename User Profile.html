@@ -81,21 +81,21 @@
     <div id="border-receipt">
         <div id="containerProfile">
         <div>
+            <div class="userInfo">Email: </div>
             <div class="userInfo">First Name: </div>
             <div class="userInfo">Last Name: </div>
             <div class="userInfo">Address: </div>
-            <div class="userInfo">Email: </div>
             <div class="userInfo">Phone Number: </div>
             <div class="userInfo">Driver's License: </div>
         </div>
         <div>
+            <div id="profileEmail" class="unchangeable" placeholder="Email"></div>
+            </br>
             <input id="profileFName" placeholder="First Name">
             </br>
             <input id="profileLName" placeholder="Last Name">
             </br>
             <input id="profileAddress" placeholder="Address">
-            </br>
-            <input id="profileEmail" placeholder="Email">
             </br>
             <input id="profilePN" placeholder="Phone Number">
             </br>
@@ -106,7 +106,7 @@
     <form id="submitC">
         <input type="submit" value="Update Profile">
     </form>
-    
+    <div class="bottomPadding"></div>
 
     <!-- <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
         <a href="./main.html"><i class="fas fa-home"></i></a>
@@ -185,7 +185,6 @@
                             .update({
                                 "name": profN,
                                 "last name": profLN,
-                                "email": profE,
                                 "address": profDL,
                                 "phone number": profPN,
                                 "driver's license": profDL
@@ -218,10 +217,10 @@
                             const dataDL = doc.data()["driver's license"];
                             console.log(doc.data());
 
+                            $("#profileEmail").text(dataE);
                             $("#profileFName").val(dataFN);
                             $("#profileLName").val(dataLN);
                             $("#profileAddress").val(dataA);
-                            $("#profileEmail").val(dataE);
                             $("#profilePN").val(dataPN);
                             $("#profileDL").val(dataDL);
 
