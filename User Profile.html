@@ -80,27 +80,27 @@
 
     <div id="border-receipt">
         <div id="containerProfile">
-        <div>
-            <div class="userInfo">Email: </div>
-            <div class="userInfo">First Name: </div>
-            <div class="userInfo">Last Name: </div>
-            <div class="userInfo">Address: </div>
-            <div class="userInfo">Phone Number: </div>
-            <div class="userInfo">Driver's License: </div>
-        </div>
-        <div>
-            <div id="profileEmail" class="unchangeable" placeholder="Email"></div>
-            </br>
-            <input id="profileFName" placeholder="First Name">
-            </br>
-            <input id="profileLName" placeholder="Last Name">
-            </br>
-            <input id="profileAddress" placeholder="Address">
-            </br>
-            <input id="profilePN" placeholder="Phone Number">
-            </br>
-            <input id="profileDL" placeholder="Driver's License">
-        </div>
+            <div>
+                <div class="userInfo">Email: </div>
+                <div class="userInfo">First Name: </div>
+                <div class="userInfo">Last Name: </div>
+                <div class="userInfo">Address: </div>
+                <div class="userInfo">Phone Number: </div>
+                <div class="userInfo">Driver's License: </div>
+            </div>
+            <div>
+                <div id="profileEmail" class="unchangeable" placeholder="Email"></div>
+                </br>
+                <input id="profileFName" placeholder="First Name">
+                </br>
+                <input id="profileLName" placeholder="Last Name">
+                </br>
+                <input id="profileAddress" placeholder="Address">
+                </br>
+                <input id="profilePN" placeholder="Phone Number">
+                </br>
+                <input id="profileDL" placeholder="Driver's License">
+            </div>
         </div>
     </div>
     <form id="submitC">
@@ -114,13 +114,13 @@
     <!-- Bootstrap libraries from CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Firebase libraries from CDN -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
@@ -144,9 +144,9 @@
 
         console.log("Current user is ", firebase.auth.currentUser);
 
-        
+
         submitProfile();
-        
+
         // Displays the current values on the input boxes.
         function getUserData() {
             return firebase.auth().onAuthStateChanged(function (user) {
@@ -186,15 +186,7 @@
 
 
         getUserData();
-
-        
-
-
-
-
     </script>
-
-
 </body>
 
 </html>

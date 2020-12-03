@@ -6,7 +6,7 @@
 
 
 //-----------------------------------------------------
-// This function adds a listener to the form
+// This function adds a listener to the Renewal form
 // When form is submitted, the values are extracted
 // and written into the database
 //------------------------------------------------------
