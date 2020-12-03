@@ -107,6 +107,7 @@
         <input type="submit" value="Update Profile">
     </form>
     <div class="bottomPadding"></div>
+    <div id="successMessage"></div>
 
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
@@ -171,7 +172,6 @@
                             $("#profileAddress").val(dataA);
                             $("#profilePN").val(dataPN);
                             $("#profileDL").val(dataDL);
-
                         })
                 } else {
                     console.log("no user is signed in");

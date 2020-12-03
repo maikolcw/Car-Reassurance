@@ -77,45 +77,12 @@ function addListener() {
 }
 addListener();
 
-
-
 //-----------------------------------------------------
 // This function adds a listener to the brokers form
 // When form is submitted, the values are extracted
 // and written into the database
-//------------------------------------------------------
+//----------------------------------------
 function addListener2() {
-    document.getElementById("brokerform").addEventListener("submit", function (e) {
-        // disable default form handling
-        e.preventDefault();
-
-
-        // grab what user typed
-        var bname = document.getElementById("bname").value;
-        var blastname = document.getElementById("blastname").value;
-        var brokerlicense = document.getElementById("brokerlicense").value;
-        var company = document.getElementById("company").value;
-        var bcity = document.getElementById("bcity").value;
-        var bprovince = document.getElementById("bprovince").value;
-
-        // write the values into new database document
-        db.collection("Brokers")
-            .add({ //using the add() function, auto-generated doc ID
-                "Broker Name": bname,
-                "Broker Last Name": blastname,
-                "Broker License": brokerlicense,
-                "Company": company,
-                "Broker City": bcity,
-                "Broker Province": bprovince
-            })
-            .then(function() {
-                window.location.href="SuccessPage.html";
-            })      
-    })
-}
-addListener2();
-
-function addListener3() {
     document.getElementById("brokerformb").addEventListener("submit", function (e) {
         // disable default form handling
         e.preventDefault();
@@ -144,35 +111,7 @@ function addListener3() {
             })      
     })
 }
-addListener3();
-
-
-//--------------------------------------------------------
-// This function reads the "shops" collection from database
-// Then cycles thru the collection to
-//   - create a DOM element
-//   - put name of shop inside DOM
-//   - attach this DOM to the display area for shops (id = "shops")
-//---------------------------------------------------------
-function displayShops() {
-    db.collection("shops") //go to the shops collection
-        .get() //get whole collection
-        .then(function (snap) {
-            snap.forEach(function (doc) { //cycle thru collection to get docs
-
-                var n = doc.data().name; //extract the name field
-                //console.log (n);
-
-                //create a new div, with name field, attach it to the right slot
-                item = document.createElement("div");
-                item.innerText = n;
-                $("#shops").append(item);
-
-            });
-        })
-}
-
-
+addListener2();
 
 //---------------------------------------------------
 // This function checks to see if the user is sign in.
@@ -240,65 +179,6 @@ function logout() {
     FirebaseAuth.getInstance().signOut();
 }
 
-//--------------------------------------------------------------------
-// This function is used to change the username and email of the logged in user
-// Use authentication SDK functions to change the authenticated user
-// 
-// Input param:  name, email, address strings
-//---------------------------------------------------------------------
-function updateUserProfileAuth(name, email, address) {
-    firebase.auth().onAuthStateChanged(function (user) {
-        console.log("user is signed in: " + user.uid);
-        console.log("old display name: " + user.displayName);
-        user.updateProfile({
-            displayName: name
-        }).then(function () {
-            console.log("updated authenticated user profile");
-            console.log("new display name: " + user.displayName);
-            updateUserProfileFirestore(name, email, address);
-        }).catch(function (error) {
-            console.log("authenticated user profile update failed");
-        })
-    })
-}
-//updateUserProfileAuth("Bill Gates", "bill@bill.com", "Kingsway");
-
-function updateUserProfileFirestore(name, elecmail, address) {
-    firebase.auth().onAuthStateChanged(function (user) {
-        console.log("user is signed in: " + user.uid);
-        db.collection("users").doc(user.uid)
-            .update({
-                "name": name,
-                "email": elecmail,
-                "address": address
-            }).then(function () {
-                console.log("updated users database");
-            }).catch(function (error) {
-                console.log("cannot update users database");
-            })
-    })
-}
-// Displays some information on the console.
-function getUserProfile() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user != null) {
-            console.log(user);
-            name = user.displayName;
-            email = user.email;
-            photoUrl = user.photoURL;
-            emailVerified = user.emailVerified;
-            uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
-            // this value to authenticate with your backend server, if
-            // you have one. Use User.getToken() instead.
-            console.log(name);
-            console.log(email);
-            console.log(photoUrl);
-            console.log(emailVerified);
-            console.log(uid);
-        }
-    })
-}
-//getUserProfile();
 
 //-----------------------------------------------------------------------
 // Assume the HTML has a text input for user to enter location,
@@ -383,6 +263,7 @@ function submitProfile() {
                         "driver's license": profDL
                     }).then(function () {
                         console.log("updated users database");
+                        $("#successMessage").append("Successfully updated.");
                     }).catch(function (error) {
                         console.log("cannot update users database");
                     })

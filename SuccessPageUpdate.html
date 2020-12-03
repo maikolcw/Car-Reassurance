@@ -69,7 +69,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./login.html" id="loginlink">login/signup</a>
+                    <a class="nav-link" href="login.html" id="loginlink">login/signup</a>
                 </li>
             </ul>
         </div>
@@ -77,34 +77,19 @@
 
     <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
 
-    <div>
-        <div id="blueCard"></div>
-        <div id="homeText">
-        <p>At Car Reassurance, we understand times are tough. We want auto insurance to be the last thing you’re
-            thinking about.
-        </p>
+    <div id="successText">
+        <p id="bigS">Success!</p>
         <hr>
-        <p>
-            Our team will connect you with a broker who can process your renewal within days, all from
-            the comfort of your own home.
-        </p>
-        <hr>
-        <p>We’re here to meet the needs of individuals, businesses, and non-profit
-            organizations.
-        </p>
-        </div>
+        <p>Your profile has been updated!</p>
     </div>
-    <div id="formLink">
-        <a class="formLinks topStyle" href="Renewal.html">User Renewals</a>
-        <br>
-        <a class="formLinks bottomStyle" href="Broker.html">Broker form</a>
-    </div>
-    <div id="blueCard">
-        <div class="inBlue">Companies Associated With Car Reassurance</div>
-    </div>
-    <div id="companyList"></div>
-    <div class="bottomPadding"></div>
-    
+
+        <a id="noLine" href="main.html">
+            <div id="backHome">
+                Go back to Home Page
+            </div>
+        </a>
+
+        <div class="bottomPadding"></div>
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
     <!-------------------------------------------->
@@ -132,8 +117,6 @@
     <script src="scripts/app.js"> </script>
 
     <script>
-        getCompanies();
-        logout()
         getUser();
         disableLoginLink();
     </script>
