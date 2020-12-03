@@ -19,7 +19,9 @@
 </head>
 
 <body>
-
+    <div class="background">
+        <!-- <div class="blur"></div> -->
+    </div>
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
@@ -31,19 +33,36 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./index.html"><img id="home_css" src="./images/Homeicon.png"></a>
+                    <a class="nav-link" href="./main.html" id="mainPage">
+                        <div class="navItems">
+                            <i class="fas fa-home"></i>
+                            <div class="navText">Main Page</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./CoverageOptions.html"><img id="information_css" src="./images/Coverageicon.png"></a>
+                    <a class="nav-link" href="./CoverageOptions.html" id="coveragePage">
+                        <div class="navItems">
+                            <i class="fas fa-car-side"></i>
+                            <div class="navText">Coverage Options</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Information.html"><img id="coverage_css" src="./images/informationicon.png"></a>
+                    <a class="nav-link" href="./FAQ.html" id="faqPage">
+                        <div class="navItems">
+                            <i class="fas fa-question-circle"></i>
+                            <div class="navText">Frequently Asked Questions</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Settings.html"><img id="settings_css" src="./images/Settingsicon.png"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./User Profile.html"><img id="profile_css" src="./images/Profileicon.png"></a>
+                    <a class="nav-link" href="./User Profile.html" id="profilePage">
+                        <div class="navItems">
+                            <i class="fas fa-user"></i>
+                            <div class="navText">User Profile</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html" id="loginlink">login/signup</a>
@@ -111,7 +130,7 @@
         <p> Fruit2: </p> <input type="text" id="fruit2">
         <button id="myBtn">SUBMIT</button>
     </div>
-
+    <div class="bottomPadding"></div>
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
     <!-------------------------------------------->

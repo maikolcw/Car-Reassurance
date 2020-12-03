@@ -22,7 +22,9 @@
 </head>
 
 <body>
-
+    <div class="background">
+        <!-- <div class="blur"></div> -->
+    </div>
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
@@ -34,16 +36,36 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./main.html" id="mainPage"><i class="fas fa-home"></i></a>
+                    <a class="nav-link" href="./main.html" id="mainPage">
+                        <div class="navItems">
+                            <i class="fas fa-home"></i>
+                            <div class="navText">Main Page</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./CoverageOptions.html" id="coveragePage"><i class="fas fa-car-side"></i></a>
+                    <a class="nav-link" href="./CoverageOptions.html" id="coveragePage">
+                        <div class="navItems">
+                            <i class="fas fa-car-side"></i>
+                            <div class="navText">Coverage Options</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./FAQ.html" id="faqPage"><i class="fas fa-question-circle"></i></a>
+                    <a class="nav-link" href="./FAQ.html" id="faqPage">
+                        <div class="navItems">
+                            <i class="fas fa-question-circle"></i>
+                            <div class="navText">Frequently Asked Questions</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./User Profile.html" id="profilePage"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="./User Profile.html" id="profilePage">
+                        <div class="navItems">
+                            <i class="fas fa-user"></i>
+                            <div class="navText">User Profile</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./login.html" id="loginlink">login/signup</a>
@@ -60,7 +82,7 @@
             <div class="row">
                 <div class="col-sm">
                     <!-- Basic Form -->
-                    <form id="brokerform">
+                    <form id="brokerformb">
                         <br>
                         <label>First Name:</label><br>
                         <input type="text" id="bname" value="John"><br><br>
@@ -83,12 +105,14 @@
         </div>
     </div>
 
-    <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
+    <div class="bottomPadding"></div>
+
+    <!-- <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
         <a href="./main.html"><i class="fas fa-home"></i></a>
         <a href="./CoverageOptions.html"><i class="fas fa-car-side"></i></a>
         <a href="./FAQ.html"><i class="fas fa-question-circle"></i></a>
         <a href="./User Profile.html"><i class="fas fa-user"></i></a>
-    </footer>
+    </footer> -->
 
 
     <!-------------------------------------------->
@@ -120,7 +144,7 @@
     <script>
         getUser();
         disableLoginLink();
-        addListener2();
+        addListener3();
     </script>
 </body>
 

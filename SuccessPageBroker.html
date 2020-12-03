@@ -25,6 +25,7 @@
     <div class="background">
         <!-- <div class="blur"></div> -->
     </div>
+
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
@@ -74,91 +75,41 @@
         </div>
     </nav>
 
-    <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span>
+    <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
+
+    <div id="successText">
+        <p id="bigS">Success!</p>
+        <hr>
+        <p>We will verify your egligibility soon</p>
     </div>
 
-    <div id="contentContainer">
-        <div>
-            <h1 class="colorcoverage2 textShadow">Coverage Options</h1>
-        </div>
-        <div>
-            <br><br>
-            <div class="optionContainer">
-                <h2 class="colorcoverage2">Basic Coverage</h2>
-                <h2 class="colorcoverage2">(mandatory coverage)</h2>
-                <div class="listContainer">
-                    <ul class="colorcoverage">
-                        <li>Medical cost and wage loss for you, your passengers, and members of your household </li>
-                        <li>Third party liability coverage</li>
-                        <li>Underinsured Motorist Protection </li>
-                        <li>Hit-and-run damage and injuries </li>
-                        <li>Inverse liability protection </li>
-                    </ul>
-                </div>
+        <a id="noLine" href="main.html">
+            <div id="backHome">
+                Go back to Home Page
             </div>
-            <div id="optionalCoverageContainer" class="optionContainer">
-                <h2 class="colorcoverage2">Optional Coverage</h2>
-                <div class="listContainer">
-                    <ul class="colorcoverage">
-                        <li>Collision</li>
-                        <ul>
-                            <li>Cover repair and replacement costs, even if you’re at fault.</li>
-                            <li>Even the best drivers can make mistakes and fixing your vehicle can be expensive.
-                                Collision coverage
-                                helps pay for your vehicle repairs, towing, storage and more, even if the crash was your
-                                fault.</li>
-                        </ul>
+        </a>
 
-                        <li>Comprehensive</li>
-                        <ul>
-                            <li>Covers loss or damage to your vehicle from theft, vandalism, fire, earthquakes,
-                                explosions,
-                                flying or falling objects, hitting an animal, and weather-related damage.</li>
-                        </ul>
-
-                        <li>Extended Third-Party Liability</li>
-                        <ul>
-                            <li>Protects you from financial risk in an at-fault crash.</li>
-                        </ul>
-
-                        <li>Extended Underinsured Motorist Protection </li>
-                        <ul>
-                            <li>Provides coverage for yourself when others don’t have enough coverage.</li>
-                        </ul>
-
-                        <li>Loss of Use </li>
-                        <ul>
-                            <li>Covers your expenses to rent a vehicle, use taxis and take public transit while your
-                                vehicle is being repaired.</li>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="bottomPadding"></div>
-
+        <div class="bottomPadding"></div>
     <!-- <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
         <a href="./main.html"><i class="fas fa-home"></i></a>
         <a href="./CoverageOptions.html"><i class="fas fa-car-side"></i></a>
         <a href="./FAQ.html"><i class="fas fa-question-circle"></i></a>
         <a href="./User Profile.html"><i class="fas fa-user"></i></a>
     </footer> -->
-
+    
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
     <!-------------------------------------------->
     <!-- Bootstrap libraries from CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Firebase libraries from CDN -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
@@ -176,8 +127,6 @@
         getUser();
         disableLoginLink();
     </script>
-
-
 
 </body>
 

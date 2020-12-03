@@ -22,7 +22,9 @@
 </head>
 
 <body>
-
+    <div class="background">
+        <!-- <div class="blur"></div> -->
+    </div>
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
@@ -34,16 +36,36 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./main.html" id="mainPage"><i class="fas fa-home"></i></a>
+                    <a class="nav-link" href="./main.html" id="mainPage">
+                        <div class="navItems">
+                            <i class="fas fa-home"></i>
+                            <div class="navText">Main Page</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./CoverageOptions.html" id="coveragePage"><i class="fas fa-car-side"></i></a>
+                    <a class="nav-link" href="./CoverageOptions.html" id="coveragePage">
+                        <div class="navItems">
+                            <i class="fas fa-car-side"></i>
+                            <div class="navText">Coverage Options</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./FAQ.html" id="faqPage"><i class="fas fa-question-circle"></i></a>
+                    <a class="nav-link" href="./FAQ.html" id="faqPage">
+                        <div class="navItems">
+                            <i class="fas fa-question-circle"></i>
+                            <div class="navText">Frequently Asked Questions</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./User Profile.html" id="profilePage"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="./User Profile.html" id="profilePage">
+                        <div class="navItems">
+                            <i class="fas fa-user"></i>
+                            <div class="navText">User Profile</div>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html" id="loginlink">login/signup</a>
@@ -53,51 +75,68 @@
     </nav>
 
     <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
+    <div id="faqContainer">
+        <div id="toMiddle">
+            <div id="FAQ">
+                <h1>FAQ</h1>
+            </div>
+        </div>
 
-    <div>
-        <h1>FAQ</h1>
+        <div class="border-receipt-right">
+            <div class="receipt">
+                <h2>How long will it take for me to receive a response regarding my renewal status?</h2>
+                <p>You should receive a response from your broker within 2 business days.</p>
+            </div>
+        </div>
+        <div class="border-receipt-right">
+        <div class="receipt">
+            <h2>How long will it take to receive my insurance papers and stickers?</h2>
+            <p>You will receive your insurance papers right away via e-mail. The stickers will be mailed and may take 7-10
+                business days.</p>
+        </div>
+        </div>
+        <div class="border-receipt-right">
+        <div class="receipt">
+            <h2>What are the insurance requirements in BC?</h2>
+            <p>All drivers must purchase Basic Autoplan insurance from ICBC. Drivers can select any optional coverages they
+                think would benefit them. For more information, contact your broker.</p>
+        </div>
+        </div>
+        <div class="border-receipt-right">
+        <div class="receipt">
+            <h2>Is there any cost for at-home renewal?</h2>
+            <p>No. Totally free!</p>
+        </div>
+        </div>
+        <div class="border-receipt-right">
+        <div class="receipt">
+            <h2>How does your service work?</h2>
+            <p>After submitting a request to renew your insurance, we forward your application to the next available
+                insurance broker. The insurance broker will process your renewal and send you your papers electronically.
+                The entire process can be completed at the comfort of your own home.</p>
+        </div>
+        </div>
+        <div class="border-receipt-right">
+        <div class="receipt">
+            <h2>What if I made a mistake in my submission?</h2>
+            <p>Please resubmit a new renewal application form. We will use the most recent submission.</p>
+        </div>
+        </div>
+        <div class="border-receipt-right">
+        <div class="receipt">
+            <h2>What information do you require?</h2>
+            <p>We will need basic personal information (such as your name and address), make and model of vehicle, and
+                license number. </p>
+        </div>
+        </div>
     </div>
-    <div>
-        <br><br>
-        <h2>How long will it take for me to receive a response regarding my renewal status?</h2>
-        <p>You should receive a response from your broker within 2 business days.</p>
-    </div>
-    <div>
-        <h2>How long will it take to receive my insurance papers and stickers?</h2>
-        <p>You will receive your insurance papers right away via e-mail. The stickers will be mailed and may take 7-10
-            business days.</p>
-    </div>
-    <div>
-        <h2>What are the insurance requirements in BC?</h2>
-        <p>All drivers must purchase Basic Autoplan insurance from ICBC. Drivers can select any optional coverages they
-            think would benefit them. For more information, contact your broker.</p>
-    </div>
-    <div>
-        <h2>Is there any cost for at-home renewal?</h2>
-        <p>No. Totally free!</p>
-    </div>
-    <div>
-        <h2>How does your service work?</h2>
-        <p>After submitting a request to renew your insurance, we forward your application to the next available
-            insurance broker. The insurance broker will process your renewal and send you your papers electronically.
-            The entire process can be completed at the comfort of your own home.</p>
-    </div>
-    <div>
-        <h2>What if I made a mistake in my submission?</h2>
-        <p>Please resubmit a new renewal application form. We will use the most recent submission.</p>
-    </div>
-    <div>
-        <h2>What information do you require?</h2>
-        <p>We will need basic personal information (such as your name and address), make and model of vehicle, and
-            license number. </p>
-    </div>
-
-    <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
+    <div class="bottomPadding"></div>
+    <!-- <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
         <a href="./main.html"><i class="fas fa-home"></i></a>
         <a href="./CoverageOptions.html"><i class="fas fa-car-side"></i></a>
         <a href="./FAQ.html"><i class="fas fa-question-circle"></i></a>
         <a href="./User Profile.html"><i class="fas fa-user"></i></a>
-    </footer>
+    </footer> -->
 
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
