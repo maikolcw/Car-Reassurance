@@ -77,25 +77,33 @@
 
     <div id="welcome" class="navbar-brand colorwelcome">Welcome to Car Reassurance, <span id="username">friend</span></div>
 
-    <div id="homeText">
-        <p>At Car Reassurance, we understand times are tough. We want auto insurance to be the last thing you’re
-            thinking about. Our team will connect you with a broker who can process your renewal within days, all from
-            the comfort of your own home. We’re here to meet the needs of individuals, businesses, and non-profit
-            organizations. </p>
-    </div>
-
     <div>
-        <a href="Renewal.html">User Renewals</a>
-        <br>
-        <a href="Broker.html">Broker form</a>
+        <div id="blueCard"></div>
+        <div id="homeText">
+        <p>At Car Reassurance, we understand times are tough. We want auto insurance to be the last thing you’re
+            thinking about.
+        </p>
+        <hr>
+        <p>
+            Our team will connect you with a broker who can process your renewal within days, all from
+            the comfort of your own home.
+        </p>
+        <hr>
+        <p>We’re here to meet the needs of individuals, businesses, and non-profit
+            organizations.
+        </p>
+        </div>
     </div>
+    <div id="formLink">
+        <a class="formLinks topStyle" href="Renewal.html">User Renewals</a>
+        <br>
+        <a class="formLinks bottomStyle" href="Broker.html">Broker form</a>
+    </div>
+    <div id="blueCard">
+        <div class="inBlue">Companies Associated With Car Reassurance</div>
+    </div>
+    <div id="companyList"></div>
     <div class="bottomPadding"></div>
-    <!-- <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
-        <a href="./main.html"><i class="fas fa-home"></i></a>
-        <a href="./CoverageOptions.html"><i class="fas fa-car-side"></i></a>
-        <a href="./FAQ.html"><i class="fas fa-question-circle"></i></a>
-        <a href="./User Profile.html"><i class="fas fa-user"></i></a>
-    </footer> -->
     
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
@@ -127,6 +135,7 @@
         logout()
         getUser();
         disableLoginLink();
+        getCompanies();
     </script>
 
 </body>

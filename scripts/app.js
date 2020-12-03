@@ -171,59 +171,7 @@ function displayShops() {
             });
         })
 }
-//displayShops();
 
-//--------------------------------------------------
-// This function gets the collection of documents from the "quotes" collection,
-// cycles through each document, and creates a "div" that contains the "message"
-// field inside, and appends it to the display area of the document labelled by id.
-//---------------------------------------------------
-function getQuotes() {
-    db.collection("quotes")
-        .get()
-        .then(function (snap) {
-            snap.forEach(function (doc) {
-                var m = doc.data().message;
-                var id = doc.id;
-                //console.log(m);
-                //console.log(id);
-                $("#quotes-go-here").append("<div id='" + id + "'>" + m + "</div>");
-            })
-        })
-}
-//getQuotes();
-
-//--------------------------------------------------
-// This function gets the collection of documents from the "quotes" collection,
-// cycles through each document, and creates a card. 
-// 
-// <div class="card" style="width: 18rem;">
-//   <img class="card-img-top" src="..." alt="Card image cap">
-//   <div class='card-body'>
-//      <h5 class='card-title'>Card title</h5>
-//      <p class='card-text'>Some quick example text.</p>
-//      <a href='#' class='btn btn-primary'>Go somewhere</a>
-//   </div>
-// </div>
-//
-//---------------------------------------------------
-function getQuotesIntoCards() {
-    db.collection("quotes")
-        .get()
-        .then(function (snap) {
-            snap.forEach(function (doc) {
-                var m = doc.data().message;
-                //console.log(m);
-                var d1 = $("#quotes-go-here").append("<div class='card' style='width: 18rem;'>")
-                var i = d1.append("<img class='card-img-top' src='...' alt='Card image cap'>");
-                var d2 = d1.append("<div class='card-body'>")
-                d2.append("<h5 class='card-title'>" + m + "</h5>");
-                d2.append("<p class='card-text'>Some quick example text.</p>");
-                d2.append("<a href='#' class='btn btn-primary'>Go somewhere</a>");
-            })
-        })
-}
-//getQuotesIntoCards();
 
 
 //---------------------------------------------------
@@ -292,45 +240,6 @@ function logout() {
     FirebaseAuth.getInstance().signOut();
 }
 
-//-------------------------------------------------
-// This function gets 2 user inputs 
-// grabs those values, and passes it to the next page,
-// using two different methods
-//-------------------------------------------------
-function saveFruitsFromUser() {
-    document.getElementById("myBtn").addEventListener('click', function () {
-        var item1 = document.getElementById("fruit1").value;
-        var item2 = document.getElementById("fruit2").value;
-
-        // Method1:  pass via URL string
-        window.location.href = "fruits.html?" + item1;
-
-        // Method2:  pass in localStorage 
-        // this is an object that can be accessed from next page
-        // The format is key-value pair.
-        localStorage.setItem("item2", item2);
-    });
-}
-//saveFruitsFromUser();
-
-function displayFruits() {
-    // Method1:  get value passed through a string, then parse the string
-    // value is visible in the browser search bar
-    var queryString = decodeURIComponent(window.location.search);
-    var queries = queryString.split("?"); //delimiter
-    var item1 = queries[1]; //get what's after '?'
-    //document.write("item1="+item1);
-    //console.log(item1);
-    $("#fruits-go-here").append('<p>' + item1 + '</p>');
-
-    // Method2:  Use localStorage, which is accessible when active until session 
-    var item2 = localStorage.getItem("item2");
-    //document.write("item2=" + item2);
-    console.log(item2);
-    $("#fruits-go-here").append('<p>' + item2 + '</p>');
-}
-//displayFruits();
-
 //--------------------------------------------------------------------
 // This function is used to change the username and email of the logged in user
 // Use authentication SDK functions to change the authenticated user
@@ -369,7 +278,7 @@ function updateUserProfileFirestore(name, elecmail, address) {
             })
     })
 }
-
+// Displays some information on the console.
 function getUserProfile() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user != null) {
@@ -394,8 +303,7 @@ function getUserProfile() {
 //-----------------------------------------------------------------------
 // Assume the HTML has a text input for user to enter location,
 // and a "add" button
-// This function will listen to the "add" button, then grab the location
-// from the text input (id = "location")
+// This function will listen to the "add" button, then grab the information
 // and save it to the database for the authenticated user.
 //----------------------------------------------------------------------
 function getLocationAndSave() {
@@ -424,4 +332,64 @@ function getLocationAndSave() {
         })
     })
 }
-//getLocationAndSave();
+
+//This function gets a list of all the companies that have
+//signed up with our app, sorts it by name in ascending order,
+// then displays it in the main page.
+// This is a read function that sorts the query.
+function getCompanies() {
+    db.collection("Companies").orderBy('name')
+        .get()
+        .then(function (snap) {
+            snap.forEach(function (doc) {
+                var m = doc.data().name;
+                console.log(m);
+                var d1 = $("#companyList").append("<div width: 18rem;'>")
+                // var i = d1.append("<img class='card-img-top' src='...' alt='Card image cap'>");
+                var d2 = d1.append("<div class='card-body'>")
+                d2.append("<div id='companyItems'>" + m + "</div>");
+            })
+        })
+}
+
+// This function updates the information in the database when
+// the user hits the "Update Profile" button on the user profile page.
+// This is a write function
+function submitProfile() {
+    document.getElementById("submitC").addEventListener("submit", function (e) {
+        // disable default form handling
+        e.preventDefault();
+
+        console.log("Gello");
+
+        // grab what user typed
+        var profN = document.getElementById("profileFName").value;
+        var profLN = document.getElementById("profileLName").value;
+        var profA = document.getElementById("profileAddress").value;
+        var profE = document.getElementById("profileEmail").value;
+        var profPN = document.getElementById("profilePN").value;
+        var profDL = document.getElementById("profileDL").value;
+
+
+        function updateUserProfileFirestore() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                console.log("user is signed in: " + user.uid);
+                db.collection("users").doc(user.uid)
+                    .update({
+                        "name": profN,
+                        "last name": profLN,
+                        "address": profDL,
+                        "phone number": profPN,
+                        "driver's license": profDL
+                    }).then(function () {
+                        console.log("updated users database");
+                    }).catch(function (error) {
+                        console.log("cannot update users database");
+                    })
+            })
+        }
+        updateUserProfileFirestore();
+        
+
+    })
+}

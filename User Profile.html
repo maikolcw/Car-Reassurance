@@ -108,13 +108,6 @@
     </form>
     <div class="bottomPadding"></div>
 
-    <!-- <footer id="myfooter" class="navbar fixed-bottom bg-dark justify-content-around">
-        <a href="./main.html"><i class="fas fa-home"></i></a>
-        <a href="./CoverageOptions.html"><i class="fas fa-car-side"></i></a>
-        <a href="./FAQ.html"><i class="fas fa-question-circle"></i></a>
-        <a href="./User Profile.html"><i class="fas fa-user"></i></a>
-    </footer> -->
-
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
     <!-------------------------------------------->
@@ -147,60 +140,14 @@
         disableLoginLink();
 
         var database = firebase.database();
-
-
         var user = firebase.auth().currentUser;
 
-        if (user != null) {
-            user.providerData.forEach(function (profile) {
-                // console.log("Sign-in provider: " + profile.providerId);
-                // console.log("  Provider-specific UID: " + profile.uid);
-                // console.log("  Name: " + profile.displayName);
-                // console.log("  Email: " + profile.email);
-                // console.log("  Photo URL: " + profile.photoURL);
-            });
-        }
         console.log("Current user is ", firebase.auth.currentUser);
 
-        function submitProfile() {
-            document.getElementById("submitC").addEventListener("submit", function (e) {
-                // disable default form handling
-                e.preventDefault();
-
-                console.log("Gello");
-
-                // grab what user typed
-                var profN = document.getElementById("profileFName").value;
-                var profLN = document.getElementById("profileLName").value;
-                var profA = document.getElementById("profileAddress").value;
-                var profE = document.getElementById("profileEmail").value;
-                var profPN = document.getElementById("profilePN").value;
-                var profDL = document.getElementById("profileDL").value;
-
-
-                function updateUserProfileFirestore() {
-                    firebase.auth().onAuthStateChanged(function (user) {
-                        console.log("user is signed in: " + user.uid);
-                        db.collection("users").doc(user.uid)
-                            .update({
-                                "name": profN,
-                                "last name": profLN,
-                                "address": profDL,
-                                "phone number": profPN,
-                                "driver's license": profDL
-                            }).then(function () {
-                                console.log("updated users database");
-                            }).catch(function (error) {
-                                console.log("cannot update users database");
-                            })
-                    })
-                }
-                updateUserProfileFirestore();
-
-            })
-        }
+        
         submitProfile();
         
+        // Displays the current values on the input boxes.
         function getUserData() {
             return firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
@@ -209,6 +156,7 @@
                         .doc(user.uid)
                         .get()
                         .then(function (doc) {
+                            // Reads data from the database, and displays it.
                             const dataFN = doc.data().name;
                             const dataLN = doc.data()["last name"];
                             const dataA = doc.data().address;
